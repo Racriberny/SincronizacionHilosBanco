@@ -1,4 +1,4 @@
-package com.cristobalbernal.SincronizacionHilosBanco;
+package com.cristobalbernal.SincronizacionHilosBancoEjecucion;
 
 public class Banco {
     private final double[] cuentas;
