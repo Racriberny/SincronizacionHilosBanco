@@ -21,7 +21,10 @@ public class Banco {
 
         try {
             if (cuentas[cuentaOrigen] < cantidad) {
+                System.out.println("---------------------CANTIDAD INSUFICIENTE: " + cuentaOrigen + " SAlDO: " + cuentas[cuentaOrigen] + ".... " + cantidad);
                 return;
+            }else {
+                System.out.println("-----------TRANFERENCIA OK----------" + cuentas[cuentaOrigen]);
             }
             System.out.println(Thread.currentThread());
 
