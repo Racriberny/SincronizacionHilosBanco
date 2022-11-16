@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="810a6581-780a-472e-bb83-df395bb4ef87" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cristobalbernal/SincronizacionHilosBancoEjecucion/EjecucionTransferencias.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cristobalbernal/SincronizacionHilosBanco/Banco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cristobalbernal/SincronizacionHilosBancoEjecucion/Banco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cristobalbernal/SincronizacionHilosBanco/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cristobalbernal/SincronizacionHilosBancoEjecucion/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cristobalbernal/SincronizacionHilosBancoEjecucion/Banco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cristobalbernal/SincronizacionHilosBancoEjecucion/Banco.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +75,8 @@
       <workItem from="1667918172393" duration="727000" />
       <workItem from="1667920523300" duration="25000" />
       <workItem from="1668013616485" duration="8000" />
+      <workItem from="1668183188677" duration="324000" />
+      <workItem from="1668615569038" duration="490000" />
     </task>
     <servers />
   </component>

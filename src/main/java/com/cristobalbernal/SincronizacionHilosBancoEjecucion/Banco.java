@@ -1,7 +1,11 @@
 package com.cristobalbernal.SincronizacionHilosBancoEjecucion;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 public class Banco {
     private final double[] cuentas;
+    private final Lock cierreBanco = new ReentrantLock();
 
     public Banco(){
         cuentas = new double[100];
@@ -12,18 +16,25 @@ public class Banco {
     }
 
     public void transferencia(int cuentaOrigen, int cuentaDestino, double cantidad){
-        if (cuentas[cuentaOrigen]< cantidad){
-            return;
+
+        cierreBanco.lock();
+
+        try {
+            if (cuentas[cuentaOrigen] < cantidad) {
+                return;
+            }
+            System.out.println(Thread.currentThread());
+
+            cuentas[cuentaOrigen] -= cantidad; //Este es el dinero que sale de la cuenta
+
+            System.out.printf("%10.2f de %d para %d", cantidad, cuentaOrigen, cuentaDestino);
+
+            cuentas[cuentaDestino] += cantidad; //Suba la cantidad de dinero a la cuenta destino.
+
+            System.out.println("Saldo total: " + getSaldoCuenta());
+        }finally {
+            cierreBanco.unlock();
         }
-        System.out.println(Thread.currentThread());
-
-        cuentas[cuentaOrigen]-=cantidad; //Este es el dinero que sale de la cuenta
-
-        System.out.printf("%10.2f de %d para %d",cantidad,cuentaOrigen,cuentaDestino);
-
-        cuentas[cuentaDestino] += cantidad; //Suba la cantidad de dinero a la cuenta destino.
-
-        System.out.println("Saldo total: " + getSaldoCuenta());
     }
     public double getSaldoCuenta(){
         double suma_cuenta = 0;
@@ -33,4 +44,5 @@ public class Banco {
         }
         return suma_cuenta;
     }
+
 }
