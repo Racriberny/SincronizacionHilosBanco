@@ -6,7 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class Banco {
     private final double[] cuentas;
-    private final Lock cierreBanco = new ReentrantLock();
+    //private final Lock cierreBanco = new ReentrantLock();
     private Condition saldoSuficiente;
 
     public Banco(){
@@ -15,18 +15,19 @@ public class Banco {
         for (int i = 0; i <cuentas.length ; i++) {
             cuentas[i] = 2000;
         }
-        saldoSuficiente = cierreBanco.newCondition();
+        //saldoSuficiente = cierreBanco.newCondition();
     }
 
-    public void transferencia(int cuentaOrigen, int cuentaDestino, double cantidad) throws InterruptedException {
+    public synchronized void transferencia(int cuentaOrigen, int cuentaDestino, double cantidad) throws InterruptedException {
 
-        cierreBanco.lock();
+        //cierreBanco.lock();
 
-        try {
+        //try {
             while(cuentas[cuentaOrigen] < cantidad) {
                 //System.out.println("---------------------CANTIDAD INSUFICIENTE: " + cuentaOrigen + " SAlDO: " + cuentas[cuentaOrigen] + ".... " + cantidad);
                 //return;
-                saldoSuficiente.await();
+                //saldoSuficiente.await();
+                wait();
 
             }
 
@@ -40,10 +41,12 @@ public class Banco {
 
             System.out.println("Saldo total: " + getSaldoCuenta());
 
-            saldoSuficiente.signalAll();
-        }finally {
-            cierreBanco.unlock();
-        }
+            notifyAll();
+
+            //saldoSuficiente.signalAll();
+        //}finally {
+            //cierreBanco.unlock();
+        //}
     }
     public double getSaldoCuenta(){
         double suma_cuenta = 0;

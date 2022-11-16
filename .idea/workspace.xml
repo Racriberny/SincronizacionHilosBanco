@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="810a6581-780a-472e-bb83-df395bb4ef87" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cristobalbernal/SincronizacionHilosBancoEjecucion/Banco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cristobalbernal/SincronizacionHilosBancoEjecucion/Banco.java" afterDir="false" />
-    </list>
+    <list default="true" id="810a6581-780a-472e-bb83-df395bb4ef87" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,6 +77,7 @@
       <workItem from="1668616300290" duration="398000" />
       <workItem from="1668616785276" duration="20000" />
       <workItem from="1668616868972" duration="463000" />
+      <workItem from="1668617499424" duration="11000" />
     </task>
     <servers />
   </component>
